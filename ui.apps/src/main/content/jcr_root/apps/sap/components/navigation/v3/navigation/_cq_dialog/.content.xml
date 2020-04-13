@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Navigation v3 (footer)"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          extraClientlibs="[sap.components.navigation.v3.editor]">
+    <content
+            granite:class="sap-navigation_v3__editor"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+
+            <tabs jcr:primaryType="nt:unstructured"
+                  maximized="{Boolean}true"
+                  sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <title jcr:primaryType="nt:unstructured"
+                           jcr:title="Title"
+                           margin="{Boolean}true"
+                           sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    margin="{Boolean}true"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                                        <items jcr:primaryType="nt:unstructured">
+
+                                            <titleGroup
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <title
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldDescription="Title of footer"
+                                                            fieldLabel="Title of footer"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            name="./title"/>
+
+                                                    <radio-group
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                            name="./typeOfLink"
+                                                            granite:class="cq-dialog-radio-group-select-url">
+                                                        <items
+                                                                jcr:primaryType="nt:unstructured">
+                                                            <radio-1
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Simple URL"
+                                                                    value="{Boolean}false"
+                                                                    checked="{Boolean}true"/>
+                                                            <radio-2
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Path to page"
+                                                                    value="{Boolean}true"
+                                                                    checked="{Boolean}true"/>
+                                                        </items>
+                                                    </radio-group>
+
+                                                    <linkTo
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Link to URL"
+                                                            name="./linkTo"
+                                                            rootPath="/content/sap"
+                                                            suffix=".html"
+                                                            sling:resourceType="cq/gui/components/coral/common/form/pagefield/"/>
+                                                    <select
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Type of open"
+                                                            name="./typeOfOpen"
+                                                            sling:resourceType="granite/ui/components/foundation/form/select">
+                                                        <items jcr:primaryType="cq:WidgetCollection">
+                                                            <self
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Open on self page"
+                                                                    value="_self"/>
+                                                            <blank
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Open on new tab Page"
+                                                                    value="_blank"/>
+                                                        </items>
+                                                    </select>
+                                                </items>
+                                            </titleGroup>
+
+                                        </items>
+                                    </column>
+                                </items>
+
+                            </column>
+                        </items>
+                    </title>
+
+                    <socialGroups jcr:primaryType="nt:unstructured"
+                                  jcr:title="Socials"
+                                  margin="{Boolean}true"
+                                  sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    margin="{Boolean}true"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <multifieldcollection
+                                                    granite:class="foundation-toggleable cmp-navigation__editor-multifield_socials"
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    composite="{Boolean}true"
+                                                    fieldDescription="New value"
+                                                    fieldLabel="Social navigation collection"
+                                                    name="./socialNavigationListCol">
+                                                <field
+                                                        granite:class="cmp-navigation__editor-social"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        name="./socials">
+                                                    <items jcr:primaryType="nt:unstructured">
+
+                                                        <image
+                                                                granite:class="cmp-navigation__editor-social__image"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                jcr:title="Image"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                margin="{Boolean}true">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <columns
+                                                                        granite:class="cmp-navigation__editor-social__image_block"
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                                                        margin="{Boolean}true">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <column
+
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <file
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                                        autoStart="{Boolean}false"
+                                                                                        class="cq-droptarget"
+                                                                                        fileNameParameter="./fileName"
+                                                                                        fileReferenceParameter="./fileReference"
+                                                                                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                                                        multiple="{Boolean}false"
+                                                                                        name="./file"
+                                                                                        title="Upload Image Asset"
+                                                                                        uploadUrl="${suffix.path}"
+                                                                                        useHTML5="{Boolean}true"/>
+                                                                            </items>
+                                                                        </column>
+                                                                    </items>
+                                                                </columns>
+                                                            </items>
+                                                        </image>
+
+                                                        <linkTo
+                                                                granite:class="cmp-navigation__editor-social__link"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                fieldLabel="Link to URL"
+                                                                name="./linkTo"
+                                                                rootPath="/content/sap"
+                                                                suffix=".html"
+                                                                sling:resourceType="cq/gui/components/coral/common/form/pagefield/"/>
+                                                        <select
+                                                                granite:class="cmp-navigation__editor-social__select"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                fieldLabel="Type of open"
+                                                                name="./typeOfOpen"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select">
+                                                            <items jcr:primaryType="cq:WidgetCollection">
+                                                                <self
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Open on self page"
+                                                                        value="_self"/>
+                                                                <blank
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Open on new tab Page"
+                                                                        value="_blank"/>
+                                                            </items>
+                                                        </select>
+
+                                                    </items>
+                                                </field>
+                                            </multifieldcollection>
+                                        </items>
+                                    </column>
+                                </items>
+                            </column>
+                        </items>
+                    </socialGroups>
+
+                    <copyright jcr:primaryType="nt:unstructured"
+                               jcr:title="Copyrights"
+                               margin="{Boolean}true"
+                               sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    margin="{Boolean}true"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+
+                                <items jcr:primaryType="nt:unstructured">
+                                    <copyrightNames jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <multi
+                                                    granite:class="foundation-toggleable cmp-navigation__editor-multifield_actions_copyright"
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    composite="{Boolean}true"
+                                                    fieldDescription="New value"
+                                                    fieldLabel="MultiField navigation collection"
+                                                    name="./copyrightsCol">
+                                                <field
+                                                        granite:class="cmp-navigation__editor-action"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        acs-commons-nested=""
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        name="./copyrightNames">
+                                                    <items jcr:primaryType="nt:unstructured">
+
+                                                        <checkbox
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                fieldDescription="Is URL link?"
+                                                                name="./isURL"
+                                                                value="{Boolean}true"
+                                                                uncheckedValue="{Boolean}false"
+                                                                text="URL?"/>
+                                                        <radio-group
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                name="./typeOfOpen"
+                                                                granite:class="cq-dialog-radio-group-select-url cq-dialog-radio-group_copyright">
+                                                            <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                <radio-1
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Self page"
+                                                                        value="_self"
+                                                                        checked="{Boolean}true"/>
+                                                                <radio-2
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Next "
+                                                                        value="_blank"
+                                                                        checked="{Boolean}true"/>
+                                                            </items>
+                                                        </radio-group>
+                                                        <link
+                                                                granite:class="cmp-navigation__editor-actionField"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="cq/gui/components/coral/common/form/pagefield"
+                                                                emptyText="Link"
+                                                                name="./link"
+                                                                required="{Boolean}true"
+                                                                rootPath="/content"/>
+                                                        <text
+                                                                granite:class="cmp-navigation__editor-actionField"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                emptyText="Description Text"
+                                                                required="{Boolean}true"
+                                                                name="./descriptionLink"/>
+
+                                                    </items>
+                                                </field>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        field-path="${requestPathInfo.resourcePath}"/>
+                                            </multi>
+                                        </items>
+                                        <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                element-names-container="{Boolean}true"
+                                                field-path="${requestPathInfo.resourcePath}"/>
+                                    </copyrightNames>
+
+                                </items>
+                            </column>
+                        </items>
+                    </copyright>
+
+                    <footerlinks jcr:primaryType="nt:unstructured"
+                                 jcr:title="Groups footer links"
+                                 margin="{Boolean}true"
+                                 sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    margin="{Boolean}true"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+
+                                <items jcr:primaryType="nt:unstructured">
+                                    <footerlinksNames jcr:primaryType="nt:unstructured"
+                                                      sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <multi
+                                                    granite:class="foundation-toggleable cmp-navigation__editor-multifield_actions_footerlinks"
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    composite="{Boolean}true"
+                                                    fieldDescription="New value"
+                                                    fieldLabel="Group links collection"
+                                                    name="./footerlinksCol">
+                                                <field
+                                                        granite:class="cmp-navigation__editor-action_footerlinks"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        name="./footerlinksNames">
+                                                    <items jcr:primaryType="nt:unstructured">
+
+                                                        <title
+                                                                jcr:primaryType="nt:unstructured"
+                                                                fieldDescription="Title group links"
+                                                                fieldLabel="Title group"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                name="./groupTitle"/>
+
+                                                        <multi
+                                                                granite:class="foundation-toggleable cmp-navigation__editor-multifield_actions_infolinks"
+                                                                cq:showOnCreate="{Boolean}true"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                                composite="{Boolean}true"
+                                                                fieldDescription="New value"
+                                                                fieldLabel="Links of group"
+                                                                name="./linksCol">
+                                                            <field
+                                                                    granite:class="cmp-navigation__editor-action_infolinks"
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                    name="./linksNames">
+                                                                <items jcr:primaryType="nt:unstructured">
+
+                                                                    <checkbox
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                            fieldDescription="Is URL link?"
+                                                                            name="./isURL"
+                                                                            value="true"
+                                                                            uncheckedValue="false"
+                                                                            text="Is URL link?"/>
+                                                                    <link
+                                                                            granite:class="cmp-navigation__editor-actionField"
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="cq/gui/components/coral/common/form/pagefield"
+                                                                            emptyText="Link"
+                                                                            name="./link"
+                                                                            required="{Boolean}true"
+                                                                            rootPath="/content"/>
+                                                                    <text
+                                                                            granite:class="cmp-navigation__editor-actionField"
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            emptyText="Description Text"
+                                                                            required="{Boolean}true"
+                                                                            name="./descriptionLink"/>
+
+                                                                </items>
+                                                            </field>
+                                                            <granite:data
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    field-path="${requestPathInfo.resourcePath}"/>
+                                                        </multi>
+
+
+                                                    </items>
+                                                </field>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        field-path="${requestPathInfo.resourcePath}"/>
+                                            </multi>
+                                        </items>
+                                        <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                element-names-container="{Boolean}true"
+                                                field-path="${requestPathInfo.resourcePath}"/>
+                                    </footerlinksNames>
+
+                                </items>
+                            </column>
+                        </items>
+                    </footerlinks>
+
+                </items>
+            </tabs>
+        </items>
+    </content>
+
+
+</jcr:root>

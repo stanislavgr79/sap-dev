@@ -1,0 +1,36 @@
+@media (min-width: 1200px){
+    .hero-mini {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media (min-width: 768px){
+	.hero-mini__img{
+        max-width: 45%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 767px){
+
+ .hero-mini__img {
+    max-width: 72px;
+    height: auto;
+    margin-bottom: 10px;
+    left: 0;
+    top: 0;
+    margin-right: auto;
+    margin-bottom: auto;
+    float: left;
+    padding-right: 10px;
+	}
+
+	.hero_info {
+       box-sizing: border-box;
+       display: table;
+	}
+
+}

@@ -1,0 +1,30 @@
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-use.templates="templates.html"
+     data-sly-use.model="com.sap.core.models.MediaInfoVideo"
+     data-sly-use.videoTemplate="video.html"
+     data-sly-use.titleTemplate="title.html"
+     data-sly-use.descriptionTemplate="description.html"
+
+     data-sly-test.hasContent="${model.title || model.description}"
+     class="cmp-sap-model_video"
+>
+
+    <div class="media-info" >
+
+        <div class="media-info__content row-fluid ">
+            <sly data-sly-call="${titleTemplate.title @ model=model}"></sly>
+            <sly data-sly-call="${descriptionTemplate.description @ model=model}"></sly>
+
+            <ul class="icons" data-sly-list="${model.mediaInfo}">
+                <li><i class="icon-ok"></i>${item}</li>
+            </ul>
+        </div>
+
+        <sly class="media-info__video" data-sly-call="${videoTemplate.video @ video=model}"></sly>
+    </div>
+
+</sly>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-sap-model_video'}"></sly>
+<sly data-sly-call="${clientLib.css @ categories=['sap.components.media_info_video.v1.viewer']}"></sly>

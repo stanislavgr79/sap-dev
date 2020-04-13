@@ -1,0 +1,22 @@
+
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-use.templates="templates.html"
+     data-sly-use.model="com.sap.core.models.Button"
+     data-sly-test.hasContent="${model.description || model.linkLabel}"
+     class="cmp-model__sap-btn"
+>
+    <div class="sap-btn" >
+
+        <sly>
+            <h3 class="sap-btn__content" style="${model.styleSideDescription @ context='styleString'}">${model.description}
+                <a class="btn btn-primary btn__side" href="${model.linkTo}" style="${model.styleSide @ context='styleString'}" target="${model.typeOfOpen}">
+                    ${model.linkLabel}</a>
+            </h3>
+        </sly>
+
+    </div>
+</sly>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-model__sap-btn'}"></sly>
+<sly data-sly-call="${clientLib.css @ categories=['sap.components.button.v2']}"></sly>

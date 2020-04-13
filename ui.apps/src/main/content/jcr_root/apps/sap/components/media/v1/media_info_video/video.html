@@ -1,0 +1,9 @@
+<sly class="media-info__video video-container" data-sly-template.video="${@ video}" >
+
+    <iframe title="simple_link" data-sly-test="${!video.typeOfLink}" width="560" height="315" src="${video.videoPath}"
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    <iframe title="embed_link" data-sly-test="${video.typeOfLink}" width="560" height="315" src="${video.videoPath}"
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</sly>

@@ -1,0 +1,29 @@
+
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-use.templates="templates.html"
+     data-sly-use.model="com.sap.core.models.HeroListInfo"
+     data-sly-use.imageTemplate="image.html"
+     data-sly-use.titleTemplate="title.html"
+     data-sly-use.descriptionTemplate="description.html"
+
+     data-sly-test.hasContent="${model.title || model.description}"
+>
+
+    <div class="hero-list" >
+        <sly class="hero-img" data-sly-call="${imageTemplate}"></sly>
+        <div class="hero-list__content">
+            <sly data-sly-call="${titleTemplate.title @ model=model}"></sly>
+
+            <sly data-sly-call="${descriptionTemplate.description @ model=model}"></sly>
+            <ul class="icons" data-sly-list="${model.heroList}">
+                <li><i class="icon-ok"></i>${item}</li>
+            </ul>
+        </div>
+
+    </div>
+
+</sly>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-model'}"></sly>
+<sly data-sly-call="${clientLib.css @ categories=['sap.components.hero.v3.viewer']}"></sly>

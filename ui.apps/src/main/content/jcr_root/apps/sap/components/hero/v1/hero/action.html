@@ -1,0 +1,13 @@
+<sly data-sly-template.action="${@ action}" data-sly-test="${action.linkTo}">
+
+    <sly data-sly-test="${!action.typeOfLink}">
+        <a class="btn btn-primary btn__hero" href="${action.linkTo}" target="${action.typeOfOpen}">
+            <i class="icon-off icon-white"></i> ${action.linkLabel}</a>
+    </sly>
+
+    <sly data-sly-test="${action.typeOfLink}">
+        <a class="btn btn-primary btn__hero" href="${action.linkTo @ extension='html'}" target="${action.typeOfOpen}">
+            <i class="icon-off icon-white"></i> ${action.linkLabel}</a>
+    </sly>
+
+</sly>

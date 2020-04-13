@@ -1,0 +1,191 @@
+.icon-white,
+.nav-pills > .active > a > [class^="icon-"],
+.nav-pills > .active > a > [class*=" icon-"],
+.nav-list > .active > a > [class^="icon-"],
+.nav-list > .active > a > [class*=" icon-"],
+.navbar-inverse .nav > .active > a > [class^="icon-"],
+.navbar-inverse .nav > .active > a > [class*=" icon-"],
+.dropdown-menu > li > a:hover > [class^="icon-"],
+.dropdown-menu > li > a:hover > [class*=" icon-"],
+.dropdown-menu > .active > a > [class^="icon-"],
+.dropdown-menu > .active > a > [class*=" icon-"],
+.dropdown-submenu:hover > a > [class^="icon-"],
+.dropdown-submenu:hover > a > [class*=" icon-"] {
+    background-image: none;
+}
+
+.btn [class^="icon-"],
+.nav [class^="icon-"],
+.btn [class*=" icon-"],
+.nav [class*=" icon-"] {
+    display: inline;
+}
+.btn [class^="icon-"].icon-large,
+.nav [class^="icon-"].icon-large,
+.btn [class*=" icon-"].icon-large,
+.nav [class*=" icon-"].icon-large {
+    line-height: 0.9em;
+}
+.btn [class^="icon-"].icon-spin,
+.nav [class^="icon-"].icon-spin,
+.btn [class*=" icon-"].icon-spin,
+.nav [class*=" icon-"].icon-spin {
+    display: inline-block;
+}
+
+.nav-tabs [class^="icon-"],
+.nav-pills [class^="icon-"],
+.nav-tabs [class*=" icon-"],
+.nav-pills [class*=" icon-"] {
+}
+.nav-tabs [class^="icon-"],
+.nav-pills [class^="icon-"],
+.nav-tabs [class*=" icon-"],
+.nav-pills [class*=" icon-"],
+.nav-tabs [class^="icon-"].icon-large,
+.nav-pills [class^="icon-"].icon-large,
+.nav-tabs [class*=" icon-"].icon-large,
+.nav-pills [class*=" icon-"].icon-large {
+    line-height: 0.9em;
+}
+li [class^="icon-"],
+.nav li [class^="icon-"],
+li [class*=" icon-"],
+.nav li [class*=" icon-"] {
+    display: inline-block;
+    width: 1.25em;
+    text-align: center;
+}
+li [class^="icon-"].icon-large,
+.nav li [class^="icon-"].icon-large,
+li [class*=" icon-"].icon-large,
+.nav li [class*=" icon-"].icon-large {
+    width: 1.5625em;
+}
+
+
+
+.navbar .btn-navbar {
+    width: 40px;
+    height: 40px;
+}
+
+.btn {
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    font-family: "BentonSansBold", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 20px;
+    background: #808080;
+    border: none;
+    color: #ffffff;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    text-shadow: none;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.navbar-inverse .brand {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #f0eeee;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.brand {
+        position: initial;
+        top: 3px;
+        left: 7%;
+}
+
+.brand .sap {
+    display: inline-block;
+    background-image: url(../resources/img/logo-sap.png);
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    width: 61px;
+    height: 30px;
+    vertical-align: middle;
+    position: relative;
+    top: -3px;
+}
+.lt-ie8 .brand .sap {
+    display: inline;
+    zoom: 1;
+}
+
+.navbar-inverse .brand:hover,
+.navbar-inverse .brand:active,
+.navbar-inverse .brand:focus {
+    color: #ffffff;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.4), 0 0 5px rgba(118, 220, 255, 0.8);
+}
+
+.pull-right {
+    float: right;
+}
+
+.navbar-inverse .nav > li.active a {
+    color: #fdb813;
+}
+
+.navbar-inverse .nav > li > a {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    background-image: url(../resources/img/bg-gradient-white.png);
+    background-repeat: repeat-x;
+    background-position: 0 -51px;
+    color: #ffffff;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.dropdown-menu {
+    font-family: "BentonSans", Arial, Helvetica, sans-serif;
+    font-size: 13.6px;
+    font-weight: normal;
+    line-height: 20px;
+    left: auto;
+    right: 0;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:active,
+.dropdown-menu > li > a:focus {
+    background: #f0eeee;
+    background-image: none;
+    filter: none;
+    color: #333333;
+}
+
+.navbar .nav > li > .dropdown-menu:before {
+    left: auto;
+    right: 20px;
+}
+.navbar .nav > li > .dropdown-menu:after {
+    left: auto;
+    right: 21px;
+}
+
+.navbar-inverse .nav > li.active a:hover,
+.navbar-inverse .nav > li.active a:active,
+.navbar-inverse .nav > li.active a:focus {
+    color: #fdb813;
+}
+
+.navigation{
+    padding-block-end: 50.99px;
+
+}

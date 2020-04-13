@@ -1,0 +1,36 @@
+@media (min-width: 1200px){
+    .hero-list {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media (min-width: 768px){
+	.hero-list__img{
+        max-width: 45%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 767px){
+
+ .hero-list__img {
+    max-width: 72px;
+    height: auto;
+    margin-bottom: 10px;
+    left: 0;
+    top: 0;
+    margin-right: auto;
+    margin-bottom: auto;
+    float: left;
+    padding-right: 10px;
+	}
+
+	.hero-list__content {
+       box-sizing: border-box;
+       display: table;
+	}
+
+}

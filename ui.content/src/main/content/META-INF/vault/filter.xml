@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/sap" mode="merge"/>
+    <filter root="/content/sap" mode="merge"/>
+    <filter root="/content/dam/sap" mode="merge"/>
+    <filter root="/content/experience-fragments/sap" mode="merge"/>
+</workspaceFilter>

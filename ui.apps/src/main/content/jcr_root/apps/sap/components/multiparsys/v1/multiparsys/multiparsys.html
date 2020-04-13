@@ -1,0 +1,33 @@
+
+<sly
+        data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+
+        data-sly-use.model="com.sap.core.models.MultiParsys"
+        data-sly-use.templates="templates.html"
+        data-sly-use.actionTemplate="action.html"
+        data-sly-test.hasContent="${model.column}"
+        class="cmp-model-multiparsys"
+>
+
+    <div class="parsys_multi">
+        <sly data-sly-test="${model.titleParsys}">
+            <h2 class="light">${model.titleParsys}</h2>
+        </sly>
+        <div class="cmp-model__parsys" data-column="${model.column}"}>
+            <div class="multi-parsys wrapper" style="${model.style @ context='styleString'}">
+                <div class="parsys-column" data-sly-repeat="${model.table}" >
+                    <sly data-sly-resource="${ @path=item, resourceType='wcm/foundation/components/parsys'}"></sly>
+                </div>
+
+            </div>
+        </div>
+        <sly data-sly-test="${model.descriptionButton && model.linkLabel}" data-sly-call="${actionTemplate.action @ action=model}"></sly>
+
+    </div>
+
+</sly>
+
+<sly data-sly-call="${clientlib.css @ categories='sap.components.multiparsys.v1.viewer'}"/>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-model-multiparsys'}"></sly>
+
+

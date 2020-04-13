@@ -1,0 +1,99 @@
+@media (min-width: 768px){
+
+    .navbar .nav .dropdown-toggle .caret {
+        margin-top: 13px;
+    }
+
+    .navbar .nav {
+        font-family: "BentonSansBold", Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 20px;
+    }
+
+    .navbar .nav > li {
+        line-height: 30px;
+    }
+
+    .navbar .nav > li > a {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+	.navbar .divider-vertical {
+    height: 50px;
+    margin: 0;
+    border-right: none;
+    border-left: 1px solid #1a1a1a;
+	}
+}
+
+@media (max-width: 979px){
+    .navbar-fixed-top {
+        margin-bottom: 0;
+        position: fixed;
+    }
+	.navbar .pull-right {
+    float: none;
+	}
+
+    .navigation{
+        padding-block-end: 60.99px;
+
+    }
+
+}
+
+
+@media (max-width: 767px) {
+   .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+           margin-right: -20px;
+           margin-left: -20px;
+           padding-left: 20px;
+           padding-right: 20px;
+   }
+}
+
+
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .brand .sap {
+        background-image: url("../resources/img/logo-sap@2x.png");
+        background-size: 100% 100%;
+    }
+}
+
+
+
+@media (max-width: 824px){
+    a.brand {
+    position: relative;
+        padding-left: 7%;
+    }
+
+    .navbar-inverse .brand {
+    position: relative;
+            padding-left: 7%;
+        }
+    }
+}
+
+@media (min-width: 898px){
+   .navbar .brand {
+       position: initial;
+       top: 3px;
+       left: 7%;
+   }
+}
+
+@media (max-width: 979px){
+    .navbar .brand {
+      position: initial;
+        margin-block-end: 0px;
+            padding-left: 1%;
+    }
+
+  .intro .hero-unit {
+      margin-block-end: 0px;
+  }
+}

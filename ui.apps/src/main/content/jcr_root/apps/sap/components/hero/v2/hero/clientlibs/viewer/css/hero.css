@@ -1,0 +1,38 @@
+.hero-mini__img{
+	max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-mini .hero_info .btn-hero__info {
+    background-color: #f8b20c;
+    background-image: -moz-linear-gradient(top, #fdb813, #efa902);
+    background-image: -webkit-gradient( linear, 0 0, 0 100%, from(#fdb813), to(#efa902) );
+    background-image: -webkit-linear-gradient(top, #fdb813, #efa902);
+    background-image: -o-linear-gradient(top, #fdb813, #efa902);
+    background-image: linear-gradient(to bottom, #fdb813, #efa902);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffdb813', endColorstr='#ffefa902', GradientType=0);
+}
+
+.hero-mini .hero_info .btn-hero__info {
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    font-family: "BentonSansBold", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 20px;
+    border: none;
+    color: #222;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    text-shadow: none;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #323232;
+}

@@ -1,0 +1,15 @@
+<sly data-sly-template.action="${@ action}">
+
+    <sly data-sly-test="${!action.typeOfLink}">
+        <h3 class="parsys-pull-right">${action.descriptionButton}
+            <a class="btn btn-primary parsys__btn" href="${action.linkTo}" target="${action.typeOfOpen}">${action.linkLabel}</a>
+        </h3>
+    </sly>
+
+    <sly data-sly-test="${action.typeOfLink}">
+        <h3 class="parsys-pull-right">${action.descriptionButton}
+            <a class="btn btn-primary parsys__btn" href="${action.linkTo @ extension='html'}" target="${action.typeOfOpen}">${action.linkLabel}</a>
+        </h3>
+    </sly>
+
+</sly>

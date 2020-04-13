@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[/etc/mobile/groups/responsive]"
+        jcr:primaryType="cq:PageContent"
+        cq:template="/conf/sap/settings/wcm/templates/page-content"
+        sling:resourceType="sap/components/page">
+        <root1
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <experiencefragment-header
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="sap/components/experiencefragment"
+                    fragmentVariationPath="/content/experience-fragments/sap/us/en/site/header/master_v2"/>
+            <container
+                    jcr:primaryType="nt:unstructured"
+                    editable="{Boolean}true"
+                    sling:resourceType="sap/components/container"/>
+        </root1>
+        <root2
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="sap/components/container">
+            <container
+                    jcr:primaryType="nt:unstructured"
+                    editable="{Boolean}true"
+                    sling:resourceType="sap/components/container"/>
+        </root2>
+        <root3
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+            <container
+                    jcr:primaryType="nt:unstructured"
+                    editable="{Boolean}true"
+                    sling:resourceType="sap/components/container"/>
+            <experiencefragment-footer
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="sap/components/experiencefragment"
+                    fragmentVariationPath="/content/experience-fragments/sap/us/en/site/footer/master_v2"/>
+        </root3>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <extrasmall
+                    jcr:primaryType="nt:unstructured"
+                    title="Extra Small"
+                    width="{Long}480"/>
+                <small
+                        jcr:primaryType="nt:unstructured"
+                        title="Smaller Screen"
+                        width="{Long}768"/>
+                <medium
+                        jcr:primaryType="nt:unstructured"
+                        title="Medium Screen"
+                        width="{Long}1024"/>
+                <tablet
+                        jcr:primaryType="nt:unstructured"
+                        title="Tablet"
+                        width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

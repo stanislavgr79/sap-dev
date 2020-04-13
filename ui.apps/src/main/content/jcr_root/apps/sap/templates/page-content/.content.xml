@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="Template with focus on content."
+    jcr:primaryType="cq:Template"
+    jcr:title="SAP Developers Content Page"
+    allowedPaths="[/content/sap/.+]"
+    ranking="{Long}100">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="sap/components/page">
+        <logo
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="sap/components/logo"/>
+        <title
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="sap/components/title"/>
+        <topnav
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="sap/components/topnav"/>
+        <navigation
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="sap/components/navigation/v1/navigation"/>
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="sap/components/text"
+                text="&lt;p>This is a content page&lt;/p>"
+                textIsRich="true"/>
+        </par>
+    </jcr:content>
+</jcr:root>

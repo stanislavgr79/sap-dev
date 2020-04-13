@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "FontAwesome";
+    src: url("../resources/fonts/awesome/fontawesome-webfont.eot?v=3.0.1");
+    src: url("../resources/fonts/awesome/fontawesome-webfont.eot?#iefix&v=3.0.1")
+            format("embedded-opentype"),
+        url("../resources/fonts/awesome/fontawesome-webfont.woff?v=3.0.1") format("woff"),
+        url("../resources/fonts/awesome/fontawesome-webfont.ttf?v=3.0.1")
+            format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "BentonSansLight";
+    src: url("../resources/fonts/benton-l/56fead03-cbb4-48e8-bc4c-512c795fc3c9-2.eot");
+    src: url("../resources/fonts/benton-l/56fead03-cbb4-48e8-bc4c-512c795fc3c9-2.eot?#iefix")
+            format("embedded-opentype"),
+        url("../resources/fonts/benton-l/56fead03-cbb4-48e8-bc4c-512c795fc3c9-3.woff")
+            format("woff"),
+        url("../resources/fonts/benton-l/56fead03-cbb4-48e8-bc4c-512c795fc3c9-1.ttf")
+            format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "BentonSans";
+    src: url("../resources/fonts/benton-r/b36a47f4-8876-40cb-b31a-d02f16a88d78-2.eot");
+    src: url("../resources/fonts/benton-r/b36a47f4-8876-40cb-b31a-d02f16a88d78-2.eot?#iefix")
+            format("embedded-opentype"),
+        url("../resources/fonts/benton-r/b36a47f4-8876-40cb-b31a-d02f16a88d78-3.woff")
+            format("woff"),
+        url("../resources/fonts/benton-r/b36a47f4-8876-40cb-b31a-d02f16a88d78-1.ttf")
+            format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "BentonSans";
+    src: url("../resources/fonts/benton-ri/cee0931f-0f2a-40c1-bbcc-89e2816df749-2.eot");
+    src: url("../resources/fonts/benton-ri/cee0931f-0f2a-40c1-bbcc-89e2816df749-2.eot?#iefix")
+            format("embedded-opentype"),
+        url("../resources/fonts/benton-ri/cee0931f-0f2a-40c1-bbcc-89e2816df749-3.woff")
+            format("woff"),
+        url("../resources/fonts/benton-ri/cee0931f-0f2a-40c1-bbcc-89e2816df749-1.ttf")
+            format("truetype");
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "BentonSansBold";
+    src: url("../resources/fonts/benton-b/90a77a6d-79fe-4845-96a8-b6dadd7d52a4-2.eot");
+    src: url("../resources/fonts/benton-b/90a77a6d-79fe-4845-96a8-b6dadd7d52a4-2.eot?#iefix")
+            format("embedded-opentype"),
+        url("../resources/fonts/benton-b/90a77a6d-79fe-4845-96a8-b6dadd7d52a4-3.woff")
+            format("woff"),
+        url("../resources/fonts/benton-b/90a77a6d-79fe-4845-96a8-b6dadd7d52a4-1.ttf")
+            format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}

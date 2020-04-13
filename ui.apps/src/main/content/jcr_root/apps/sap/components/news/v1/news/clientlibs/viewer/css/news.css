@@ -1,0 +1,21 @@
+
+.news .news-content {
+    text-align: left;
+}
+
+.news .news-content .sap-date {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.news .news-content p {
+    font-size: 12px;
+    margin: 5px 0;
+    text-align: justify;
+}
+
+.news .news-content .sap__news_link {
+   color: #08c;
+}
+

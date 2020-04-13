@@ -1,0 +1,30 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-use.templates="templates.html"
+     data-sly-use.model="com.sap.core.models.NavigationHeader"
+     data-sly-test.hasContent="${resource.siteTitle}"
+     class="cmp-sap-model__header"
+>
+
+    <div class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="${model.rootPage.path}.html"><span class="sap">SAP</span><strong>${resource.siteTitle}</strong></a>
+                <div class="nav-collapse collapse pull-right">
+                    <ul class="nav" data-sly-list.childPage="${model.items}">
+                        <li class="divider-vertical"></li>
+                        <li class="${childPage.activeClass}"><a href="${childPage.path}.html">${childPage.findTitle}</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+
+</sly>
+
+<sly data-sly-call="${clientLib.all @ categories=['sap.components.navigation.v2.viewer']}"></sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-sap-model__header'}"></sly>

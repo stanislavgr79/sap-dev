@@ -1,0 +1,21 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-use.templates="templates.html"
+     data-sly-use.model="com.sap.core.models.News"
+
+     data-sly-use.dateTemplate="date.html"
+     data-sly-use.descriptionTemplate="description.html"
+     data-sly-use.actionTemplate="action.html"
+
+     data-sly-test.hasContent="${model.newsDate || model.description ||  model.linkTo || model.linkLabel}"
+     class="cmp-model__sap-news"
+>
+            <div class="news-content">
+                <sly data-sly-call="${dateTemplate.newsDate @ model=model}"></sly>
+                <sly data-sly-call="${actionTemplate.action @ action=model}"></sly>
+                <sly data-sly-call="${descriptionTemplate.description @ model=model}"></sly>
+            </div>
+
+</sly>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-model__sap-news'}"></sly>
+<sly data-sly-call="${clientLib.css @ categories=['sap.components.news.v1.viewer']}"></sly>
