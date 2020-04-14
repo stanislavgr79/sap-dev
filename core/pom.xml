@@ -44,7 +44,7 @@
                         <configuration>
                             <bnd><![CDATA[
 Bundle-Category: sap
-Export-Package: com.sap.core.listeners.*;version="1.0", com.sap.core.models.*;version="1.0"
+Export-Package: com.sap.core.listeners.*;version="1.0", com.sap.core.models.*;version="1.0", com.sap.core.service.*;version="1.0"
 Import-Package: javax.annotation;version=0.0.0,*
 -exportcontents: ${packages;VERSIONED}
 -snapshot: ${tstamp;yyyyMMddHHmmssSSS}

@@ -1,16 +1,13 @@
 package com.sap.core.models;
 
+import com.sap.core.service.mediainfovideo.MediaInfoVideoService;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Model(adaptables = SlingHttpServletRequest.class,
@@ -18,6 +15,9 @@ import java.util.List;
         resourceType = "sap/components/media/v1/media_info_video"
 )
 public class MediaInfoVideo {
+
+    @Inject
+    private MediaInfoVideoService mediaInfoVideoService;
 
     @ValueMapValue
     private String title;
@@ -27,41 +27,18 @@ public class MediaInfoVideo {
     private String videoPath;
     @ValueMapValue
     private boolean typeOfLink;
+
     private List<String> mediaInfo;
 
-    @SlingObject
-    private ResourceResolver resourceResolver;
     @Inject
     private SlingHttpServletRequest request;
 
-
-    private void setTrimUrlFromVideoPath(String videoPath){
-        if(!videoPath.matches("/embed/")){
-            this.videoPath = videoPath.substring(0, videoPath.lastIndexOf("/watch?v=")).concat("/embed/").concat(videoPath.substring(videoPath.indexOf('=')+1));
-        }
-
+    @PostConstruct
+    public final void init() {
+       mediaInfo = mediaInfoVideoService.getMediaInfo(request.getResource());
+       if (!typeOfLink) videoPath = mediaInfoVideoService.getTrimUrlFromVideoPath(videoPath);
     }
 
-    public List<String> getMediaInfo() {
-            Resource childResource = request.getResource().getChild("elements");
-            if (childResource != null) {
-                mediaInfo = populateModel(childResource);
-            }
-        return mediaInfo;
-    }
-
-    List<String> populateModel(Resource resource) {
-        mediaInfo = new ArrayList<>();
-        if (resource != null) {
-            Iterator<Resource> linkResources = resource.listChildren();
-            while (linkResources.hasNext()) {
-                Resource childResource = linkResources.next();
-                if (childResource != null)
-                    mediaInfo.add(childResource.getValueMap().get("text").toString());
-            }
-        }
-        return mediaInfo;
-    }
 
     public String getTitle() {
         return title;
@@ -72,14 +49,15 @@ public class MediaInfoVideo {
     }
 
     public String getVideoPath() {
-        if (!typeOfLink) {
-            setTrimUrlFromVideoPath(videoPath);
-        }
         return videoPath;
     }
 
     public boolean isTypeOfLink() {
         return typeOfLink;
+    }
+
+    public List<String> getMediaInfo() {
+        return mediaInfo;
     }
 }
 

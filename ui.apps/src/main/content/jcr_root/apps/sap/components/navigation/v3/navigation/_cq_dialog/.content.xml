@@ -40,12 +40,15 @@
                                                             jcr:primaryType="nt:unstructured"
                                                             fieldDescription="Title of footer"
                                                             fieldLabel="Title of footer"
+                                                            required="{Boolean}true"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                             name="./title"/>
 
                                                     <radio-group
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                            required="{Boolean}true"
+                                                            default="{Boolean}false"
                                                             name="./typeOfLink"
                                                             granite:class="cq-dialog-radio-group-select-url">
                                                         <items
@@ -74,6 +77,7 @@
                                                             jcr:primaryType="nt:unstructured"
                                                             fieldLabel="Type of open"
                                                             name="./typeOfOpen"
+                                                            required="{Boolean}true"
                                                             sling:resourceType="granite/ui/components/foundation/form/select">
                                                         <items jcr:primaryType="cq:WidgetCollection">
                                                             <self
@@ -123,6 +127,7 @@
                                                 <field
                                                         granite:class="cmp-navigation__editor-social"
                                                         jcr:primaryType="nt:unstructured"
+                                                        acs-commons-nested=""
                                                         sling:resourceType="granite/ui/components/coral/foundation/container"
                                                         name="./socials">
                                                     <items jcr:primaryType="nt:unstructured">
@@ -178,6 +183,7 @@
                                                                 jcr:primaryType="nt:unstructured"
                                                                 fieldLabel="Type of open"
                                                                 name="./typeOfOpen"
+                                                                required="{Boolean}true"
                                                                 sling:resourceType="granite/ui/components/foundation/form/select">
                                                             <items jcr:primaryType="cq:WidgetCollection">
                                                                 <self
@@ -231,7 +237,7 @@
                                                         jcr:primaryType="nt:unstructured"
                                                         acs-commons-nested=""
                                                         sling:resourceType="granite/ui/components/coral/foundation/container"
-                                                        name="./copyrightNames">
+                                                        name="./copyrights">
                                                     <items jcr:primaryType="nt:unstructured">
 
                                                         <checkbox
@@ -246,6 +252,8 @@
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
                                                                 name="./typeOfOpen"
+                                                                default="_self"
+                                                                required="{Boolean}true"
                                                                 granite:class="cq-dialog-radio-group-select-url cq-dialog-radio-group_copyright">
                                                             <items
                                                                     jcr:primaryType="nt:unstructured">
@@ -256,7 +264,7 @@
                                                                         checked="{Boolean}true"/>
                                                                 <radio-2
                                                                         jcr:primaryType="nt:unstructured"
-                                                                        text="Next "
+                                                                        text="New page"
                                                                         value="_blank"
                                                                         checked="{Boolean}true"/>
                                                             </items>
@@ -319,18 +327,20 @@
                                                     composite="{Boolean}true"
                                                     fieldDescription="New value"
                                                     fieldLabel="Group links collection"
-                                                    name="./footerlinksCol">
+                                                    name="./footerGroupLinksCol">
                                                 <field
                                                         granite:class="cmp-navigation__editor-action_footerlinks"
                                                         jcr:primaryType="nt:unstructured"
+                                                        acs-commons-nested=""
                                                         sling:resourceType="granite/ui/components/coral/foundation/container"
-                                                        name="./footerlinksNames">
+                                                        name="./footerGroupLinks">
                                                     <items jcr:primaryType="nt:unstructured">
 
                                                         <title
                                                                 jcr:primaryType="nt:unstructured"
                                                                 fieldDescription="Title group links"
                                                                 fieldLabel="Title group"
+                                                                required="{Boolean}true"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                                 name="./groupTitle"/>
 
@@ -346,8 +356,9 @@
                                                             <field
                                                                     granite:class="cmp-navigation__editor-action_infolinks"
                                                                     jcr:primaryType="nt:unstructured"
+                                                                    acs-commons-nested=""
                                                                     sling:resourceType="granite/ui/components/coral/foundation/container"
-                                                                    name="./linksNames">
+                                                                    name="./linksGroup">
                                                                 <items jcr:primaryType="nt:unstructured">
 
                                                                     <checkbox
@@ -355,9 +366,30 @@
                                                                             sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                                             fieldDescription="Is URL link?"
                                                                             name="./isURL"
-                                                                            value="true"
-                                                                            uncheckedValue="false"
-                                                                            text="Is URL link?"/>
+                                                                            value="{Boolean}true"
+                                                                            uncheckedValue="{Boolean}false"
+                                                                            text="URL?"/>
+                                                                    <radio-group
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                            name="./typeOfOpen"
+                                                                            required="{Boolean}true"
+                                                                            default="_self"
+                                                                            granite:class="cq-dialog-radio-group-select-url cq-dialog-radio-group_copyright">
+                                                                        <items
+                                                                                jcr:primaryType="nt:unstructured">
+                                                                            <radio-1
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    text="Self page"
+                                                                                    value="_self"
+                                                                                    checked="{Boolean}true"/>
+                                                                            <radio-2
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    text="New page"
+                                                                                    value="_blank"
+                                                                                    checked="{Boolean}true"/>
+                                                                        </items>
+                                                                    </radio-group>
                                                                     <link
                                                                             granite:class="cmp-navigation__editor-actionField"
                                                                             jcr:primaryType="nt:unstructured"
