@@ -11,21 +11,19 @@
                 layout="responsiveGrid"/>
             <root1
                     jcr:primaryType="nt:unstructured">
-                <container
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="sap/components/container"/>
             </root1>
             <root2
                     jcr:primaryType="nt:unstructured">
                 <container
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="sap/components/container"/>
+                        sling:resourceType="sap/components/container">
+                        <container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="sap/components/container"/>
+                </container>
             </root2>
             <root3
                     jcr:primaryType="nt:unstructured">
-                <container
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="sap/components/container"/>
             </root3>
         </jcr:content>
 </jcr:root>

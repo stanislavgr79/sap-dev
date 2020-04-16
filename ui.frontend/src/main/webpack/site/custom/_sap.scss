@@ -1258,10 +1258,30 @@ body {
     color: #fdb813;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     font-family: "BentonSans", Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: normal;
     line-height: 20px;
     background: #f0eeee;
+    padding: inherit;
+}
+
+.page{
+	display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.root2{
+	flex: 1 0 auto;
+}
+
+
+.root3 {
+	flex-shrink: 0;
 }

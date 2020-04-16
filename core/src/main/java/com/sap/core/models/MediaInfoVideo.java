@@ -36,7 +36,7 @@ public class MediaInfoVideo {
     @PostConstruct
     public final void init() {
        mediaInfo = mediaInfoVideoService.getMediaInfo(request.getResource());
-       if (!typeOfLink) videoPath = mediaInfoVideoService.getTrimUrlFromVideoPath(videoPath);
+       if (!typeOfLink && videoPath!=null) videoPath = mediaInfoVideoService.getTrimUrlFromVideoPath(videoPath);
     }
 
 

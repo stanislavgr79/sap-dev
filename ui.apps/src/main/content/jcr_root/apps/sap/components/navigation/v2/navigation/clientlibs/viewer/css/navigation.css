@@ -186,6 +186,6 @@ li [class*=" icon-"].icon-large,
 }
 
 .navigation{
-    padding-block-end: 50.99px;
+  /*  padding-block-end: 50.99px; */
 
 }

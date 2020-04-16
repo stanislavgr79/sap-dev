@@ -18,6 +18,9 @@ public class NavigationFooterServiceImpl implements NavigationFooterService{
     private static final String LOGGER_MESSAGE = "ValueMap not found for resource : {}";
     private static final String TYPE_OF_OPEN_PROPERTY_KEY = "typeOfOpen";
 
+    List<CopyrightsBean> copyrightsColPartOne;
+    List<CopyrightsBean> copyrightsColPartTwo;
+
     @Override
     public List<SocialsBean> populateMultiFieldSocialsItems(List<Resource> socials) {
         List<SocialsBean> socialsCol = new ArrayList<>();
@@ -40,57 +43,55 @@ public class NavigationFooterServiceImpl implements NavigationFooterService{
     }
 
     @Override
-    public List<CopyrightsBean> populateMultiFieldCopyrightItems(List<Resource> copyrights) {
-        List<CopyrightsBean> copyrightsCol = new ArrayList<>();
-        if (copyrights != null && !copyrights.isEmpty()) {
-            for (Resource item : copyrights) {
+    public List<List<CopyrightsBean>> populateMultiFieldCopyrightItems(List<Resource> copyrights) {
+        List<List<CopyrightsBean>> copyrightsCol = new ArrayList<>();
+        copyrightsColPartOne = new ArrayList<>();
+        copyrightsColPartTwo = new ArrayList<>();
+        if (checkResource(copyrights)) {
+            for (int i = 0; i < copyrights.size(); i++) {
+                Resource item = copyrights.get(i);
                 if (item != null) {
-                    CopyrightsBean menuItem = new CopyrightsBean();
-                    ValueMap vm = item.getValueMap();
-                    menuItem.setURL(getPropertyValue(vm, "isURL").equals("true"));
-                    menuItem.setTypeOfOpen(getPropertyValue(vm, TYPE_OF_OPEN_PROPERTY_KEY));
-                    menuItem.setLink(getPropertyValue(vm, "link"));
-                    menuItem.setDescriptionLink(getPropertyValue(vm, "descriptionLink"));
-                    copyrightsCol.add(menuItem);
+                    fillCopyrightCollectionsByResourceSize(buildCopyrightBean(item), i, copyrights.size());
                 } else {
-                    logger.info(LOGGER_MESSAGE , item);
+                    logger.info(LOGGER_MESSAGE, item);
                 }
             }
         }
+        copyrightsCol.add(copyrightsColPartOne);
+        copyrightsCol.add(copyrightsColPartTwo);
         return copyrightsCol;
     }
 
-//    @Override
-//    public List<FooterLinksGroupBean> populateMultiFieldFooterLinksItems (LinkedHashMap<String, List<Resource>> footerGroupLinks) {
-//        List<FooterLinksGroupBean> footerGroupLinksCol = new ArrayList<>();
-//        if (!footerGroupLinks.isEmpty()) {
-//            footerGroupLinks.forEach((key, value) -> {
-//
-//                FooterLinksGroupBean footerLinksGroupBean = new FooterLinksGroupBean();
-//                footerLinksGroupBean.setGroupTitle(key);
-//                List<LinksNamesBean> namesBeanArrayList = new ArrayList<>();
-//
-//                for (Resource item : value) {
-//                    if (item != null) {
-//                        for (Resource linksNamesResource : item.getChildren()) {
-//                            LinksNamesBean linksNamesBean = new LinksNamesBean();
-//                            ValueMap vm = linksNamesResource.getValueMap();
-//                            linksNamesBean.setURL(getPropertyValue(vm, "isURL").equals("true"));
-//                            linksNamesBean.setTypeOfOpen(getPropertyValue(vm, TYPE_OF_OPEN_PROPERTY_KEY));
-//                            linksNamesBean.setLink(getPropertyValue(vm, "link"));
-//                            linksNamesBean.setDescriptionLink(getPropertyValue(vm, "descriptionLink"));
-//                            namesBeanArrayList.add(linksNamesBean);
-//                        }
-//                    } else {
-//                        logger.info(LOGGER_MESSAGE , item);
-//                    }
-//                }
-//                footerLinksGroupBean.setLinksNamesBeans(namesBeanArrayList);
-//                footerGroupLinksCol.add(footerLinksGroupBean);
-//            });
-//        }
-//        return footerGroupLinksCol;
-//    }
+    private boolean checkResource(List<Resource> resources){
+        return resources != null && !resources.isEmpty();
+    }
+
+    private CopyrightsBean buildCopyrightBean(Resource item){
+        CopyrightsBean copyrightsBean = new CopyrightsBean();
+        ValueMap vm = item.getValueMap();
+        boolean isURL = getPropertyValue(vm, "isURL").equals("true");
+        copyrightsBean.setURL(isURL);
+        copyrightsBean.setTypeOfOpen(getPropertyValue(vm, TYPE_OF_OPEN_PROPERTY_KEY));
+        copyrightsBean.setLink(correctLinkByURLValue(isURL, vm));
+        copyrightsBean.setDescriptionLink(getPropertyValue(vm, "descriptionLink"));
+        return copyrightsBean;
+    }
+
+    private void fillCopyrightCollectionsByResourceSize(CopyrightsBean copyrightsBean, int index, int resourceSize){
+            if(index<resourceSize/2){
+                copyrightsColPartOne.add(copyrightsBean);
+            } else {
+                copyrightsColPartTwo.add(copyrightsBean);
+            }
+    }
+
+    private String correctLinkByURLValue(boolean isURL, ValueMap vm){
+        if(!isURL){
+            return getPropertyValue(vm, "link").concat(".html");
+        }else {
+            return (getPropertyValue(vm, "link"));
+        }
+    }
 
     private String getPropertyValue(final ValueMap properties, final String propertyName) {
         return properties.containsKey(propertyName) ? properties.get(propertyName, String.class) : StringUtils.EMPTY;

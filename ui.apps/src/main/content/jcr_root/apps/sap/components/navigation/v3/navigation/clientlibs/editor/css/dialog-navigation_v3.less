@@ -27,10 +27,16 @@
     display: initial;
 }
 
-.cq-dialog-radio-group_copyright {
+.cq-dialog-checkbox_typeofopen__socials{
     position: absolute;
-    top: 0px;
+    bottom: 57px;
     left: 110px;
+}
+
+.cq-dialog-checkbox_typeofopen__copyright, .cq-dialog-checkbox_typeofopen_footerlinks{
+        position: absolute;
+        top: 0px;
+        left: 110px;
 }
 
 .cmp-navigation__editor-action .cmp-navigation__editor-actionField.coral-Form-field {
@@ -48,3 +54,7 @@
 .cmp-navigation__editor-multifield_actions .coral3-Button {
 
 }
+
+    coral-multifield[aria-invalid=true] {
+        border: solid 1px #f00;
+    }

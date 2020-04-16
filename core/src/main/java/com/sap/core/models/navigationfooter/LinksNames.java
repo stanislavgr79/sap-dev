@@ -5,6 +5,9 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
+import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class LinksNames {
 
@@ -16,6 +19,13 @@ public class LinksNames {
     private String link;
     @ValueMapValue
     private String descriptionLink;
+
+    @PostConstruct
+    public final void init() {
+        if(!isURL){
+            link = link.concat(".html");
+        }
+    }
 
     public boolean isURL() {
         return isURL;

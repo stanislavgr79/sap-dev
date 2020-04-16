@@ -11,65 +11,62 @@
                 layout="responsiveGrid"/>
             <root1
                     jcr:primaryType="nt:unstructured">
-                <container
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="sap/components/container">
-                    <hero
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="sap/components/hero/v1/hero"/>
-                    <separator
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="sap/components/separator/v1/separator"/>
-                </container>
             </root1>
             <root2
                     jcr:primaryType="nt:unstructured">
                 <container
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="sap/components/container">
-                    <multiparsys_1
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="sap/components/multiparsys/v1/multiparsys"
-                            column="3"
-                            typeOfopen="_self">
-                        <par_c1
+                        <hero
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="wcm/foundation/components/parsys">
-                            <hero
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="sap/components/hero/v3/hero"/>
-                        </par_c1>
-                        <par_c2
+                                sling:resourceType="sap/components/hero/v1/hero"/>
+                        <separator
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="wcm/foundation/components/parsys">
-                            <hero
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="sap/components/hero/v3/hero"/>
-                        </par_c2>
-                        <par_c3
+                                sling:resourceType="sap/components/separator/v1/separator"/>
+                        <container
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="wcm/foundation/components/parsys">
-                            <hero
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="sap/components/hero/v3/hero"/>
-                        </par_c3>
-                    </multiparsys_1>
-                    <separator_1
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="sap/components/separator/v2/separator"/>
-                    <media_info_video
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="sap/components/media/v1/media_info_video"/>
-                    <separator_2
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="sap/components/separator/v1/separator"/>
+                                sling:resourceType="sap/components/container">
+                                <multiparsys_1
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="sap/components/multiparsys/v1/multiparsys"
+                                        column="3"
+                                        typeOfopen="_self">
+                                    <par_c1
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/foundation/components/parsys">
+                                        <hero
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="sap/components/hero/v3/hero"/>
+                                    </par_c1>
+                                    <par_c2
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/foundation/components/parsys">
+                                        <hero
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="sap/components/hero/v3/hero"/>
+                                    </par_c2>
+                                    <par_c3
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/foundation/components/parsys">
+                                        <hero
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="sap/components/hero/v3/hero"/>
+                                    </par_c3>
+                                </multiparsys_1>
+                                <separator_1
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="sap/components/separator/v2/separator"/>
+                                <media_info_video
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="sap/components/media/v1/media_info_video"/>
+                                <separator_2
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="sap/components/separator/v1/separator"/>
+                        </container>
                 </container>
             </root2>
             <root3
                     jcr:primaryType="nt:unstructured">
-                <container
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="sap/components/container"/>
             </root3>
         </jcr:content>
 </jcr:root>

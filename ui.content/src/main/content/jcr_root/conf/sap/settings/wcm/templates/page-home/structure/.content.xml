@@ -7,20 +7,16 @@
         cq:template="/conf/sap/settings/wcm/templates/page-home"
         sling:resourceType="sap/components/page">
         <root1
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/foundation/components/responsivegrid">
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
             <experiencefragment-header
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="sap/components/experiencefragment"
                     fragmentVariationPath="/content/experience-fragments/sap/us/en/site/header/master_v2"/>
-            <container
-                    jcr:primaryType="nt:unstructured"
-                    editable="{Boolean}true"
-                    sling:resourceType="sap/components/container"/>
         </root1>
         <root2
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="sap/components/container">
+                sling:resourceType="wcm/foundation/components/responsivegrid">
             <container
                     jcr:primaryType="nt:unstructured"
                     editable="{Boolean}true"
@@ -29,10 +25,6 @@
         <root3
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/responsivegrid">
-            <container
-                    jcr:primaryType="nt:unstructured"
-                    editable="{Boolean}true"
-                    sling:resourceType="sap/components/container"/>
             <experiencefragment-footer
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="sap/components/experiencefragment"

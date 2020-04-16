@@ -9,6 +9,5 @@ import java.util.List;
 public interface NavigationFooterService {
 
     List<SocialsBean> populateMultiFieldSocialsItems(List<Resource> socials);
-    List<CopyrightsBean> populateMultiFieldCopyrightItems(List<Resource> copyrights);
-//    List<FooterLinksGroupBean> populateMultiFieldFooterLinksItems(LinkedHashMap<String, List<Resource>> footerGroupLinks);
+    List<List<CopyrightsBean>> populateMultiFieldCopyrightItems(List<Resource> copyrights);
 }

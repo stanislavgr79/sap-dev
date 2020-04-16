@@ -15,6 +15,7 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Model(adaptables = {SlingHttpServletRequest.class, Resource.class},
@@ -47,28 +48,41 @@ public class NavigationFooter {
     private List<Resource> footerGroupLinks;
 
     private List<SocialsBean> socialsCol;
-    private List<CopyrightsBean> copyrightsCol;
+    private List<CopyrightsBean> copyrightsColPartOne;
+    private List<CopyrightsBean> copyrightsColPartTwo;
     private List<LinksGroupBean> footerGroupLinksCol;
 
     @PostConstruct
     public final void init() {
-        if(checkListResource(socials)) socialsCol = navigationFooterService.populateMultiFieldSocialsItems(socials);
-        if(checkListResource(copyrights)) copyrightsCol = navigationFooterService.populateMultiFieldCopyrightItems(copyrights);
+        if(!typeOfLink) linkTo = linkTo.concat(".html");
+        if (checkListResource(socials)) setSocialsCollection(socials);
+        if (checkListResource(copyrights)) setCopyrightsCollections(copyrights);
+        if (checkListResource(footerGroupLinks)) setFooterGroupLinksCollection(footerGroupLinks);
+    }
 
-        if (checkListResource(footerGroupLinks)) {
-            footerGroupLinksCol = new ArrayList<>();
-            for (Resource resource : footerGroupLinks) {
-                LinksGroup linksGroup = resource.adaptTo(LinksGroup.class);
+    private void setSocialsCollection(List<Resource> socials){
+        socialsCol = navigationFooterService.populateMultiFieldSocialsItems(socials);
+    }
 
-                assert linksGroup != null;
-                LinksGroupBean linksGroupBean = new LinksGroupBean(linksGroup.getGroupTitle(), linksGroup.getLinksNames());
-                footerGroupLinksCol.add(linksGroupBean);
-            }
+    private void setCopyrightsCollections(List<Resource> copyrights) {
+        List<List<CopyrightsBean>> copyrightsCol = navigationFooterService.populateMultiFieldCopyrightItems(copyrights);
+        Iterator<List<CopyrightsBean>> iterator = copyrightsCol.listIterator();
+        copyrightsColPartOne = iterator.next();
+        copyrightsColPartTwo = iterator.next();
+    }
+
+    private void setFooterGroupLinksCollection(List<Resource> footerGroupLinks) {
+        footerGroupLinksCol = new ArrayList<>();
+        for (Resource resource : footerGroupLinks) {
+            LinksGroup linksGroup = resource.adaptTo(LinksGroup.class);
+            assert linksGroup != null;
+            LinksGroupBean linksGroupBean = new LinksGroupBean(linksGroup.getGroupTitle(), linksGroup.getLinksNames());
+            footerGroupLinksCol.add(linksGroupBean);
         }
     }
 
     private boolean checkListResource(List<Resource> resources) {
-        return resources!=null && !resources.isEmpty();
+        return resources != null && !resources.isEmpty();
     }
 
     public String getTitle() {
@@ -91,8 +105,12 @@ public class NavigationFooter {
         return socialsCol;
     }
 
-    public List<CopyrightsBean> getCopyrightsCol() {
-        return copyrightsCol;
+    public List<CopyrightsBean> getCopyrightsColPartOne() {
+        return copyrightsColPartOne;
+    }
+
+    public List<CopyrightsBean> getCopyrightsColPartTwo() {
+        return copyrightsColPartTwo;
     }
 
     public List<LinksGroupBean> getFooterGroupLinksCol() {

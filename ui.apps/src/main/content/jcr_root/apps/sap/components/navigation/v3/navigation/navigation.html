@@ -4,97 +4,56 @@
      data-sly-test.hasContent="${model.title}"
      class="cmp-sap-model__footer"
 >
-  <div class="cmp-sap-model__footer_bg">
-    <div class="container">
-        <div id="footer">
-            <footer>
-                <div class="row-fluid">
-                    <section class="footer-links">
-                        <div class="span3">
-                            <h4>Mobile</h4>
-                            <ul class="unstyled">
-                                <li><a href="http://scn.sap.com/community/developer-center/mobility-platform" rel="external">SAP Developer Center for Mobile</a></li>
-                                <li><a href="http://www.sapmobileappspartnercenter.com/" rel="external">SAP Mobile apps Partner Program</a></li>
-                                <li><a href="http://www.youtube.com/user/SUPDeveloperProgram" rel="external">Youtube channel</a></li>
-                                <li><a href="http://scn.sap.com/docs/DOC-36054" rel="external">SAP Mobile Academy</a></li>
-                                <li><a href="http://scn.sap.com/docs/DOC-8803" rel="external">Tutorials</a></li>
-                                <li><a href="http://scn.sap.com/community/mobile" rel="external">Community</a></li>
-                                <li><a href="http://store.sap.com/mobile" rel="external">SAP Mobile Apps Store</a></li>
-                                <li><a href="http://www.slideshare.net/SAPAppsPartner/app-development-with-sybase-unwired-platform-part-1-introduction-to-mobility" rel="external">Training</a></li>
-                            </ul>
-                        </div>
-                        <div class="span3">
-                            <h4>Database</h4>
-                            <ul class="unstyled">
-                                <li><a href="http://scn.sap.com/docs/DOC-31600" rel="external">Free 30-Day Trial</a></li>
-                                <li><a href="http://scn.sap.com/docs/DOC-31722" rel="external">Developer Edition</a></li>
-                                <li><a href="http://scn.sap.com/community/developer-center/hana" rel="external">Developer Center</a></li>
-                                <li><a href="http://help.sap.com/hana_appliance" rel="external">Documentation</a></li>
-                                <li><a href="http://scn.sap.com/docs/DOC-31723" rel="external">The Road to HANA</a></li>
-                                <li><a href="http://www.saphana.com/community/implement/hana-academy" rel="external">SAP HANA Academy</a></li>
-                            </ul>
-                        </div>
-                        <div class="span3">
-                            <h4>Cloud</h4>
-                            <ul class="unstyled">
-                                <li><a href="http://scn.sap.com/docs/DOC-28197" rel="external">Free Developer License</a></li>
-                                <li><a href="http://scn.sap.com/community/developer-center/cloud-platform" rel="external">SAP HANA Cloud Developer Center</a></li>
-                                <li><a href="https://help.netweaver.ondemand.com/help/frameset.htm" rel="external">Developer Guide</a></li>
-                                <li><a href="http://scn.sap.com/docs/DOC-28833" rel="external">Release Notes</a></li>
-                                <li><a href="http://scn.sap.com/community/developer-center/cloud-platform/content" rel="external">Developer Blogs</a></li>
-                                <li><a href="https://www.sapcloudappspartnercenter.com/pdf/TheSAPNetWeaverCloudApplicationsPartnerProgram.pdf" rel="external">Partner Program</a></li>
-                            </ul>
-                        </div>
-                        <div class="span3">
-                            <h4>Other</h4>
-                            <ul class="unstyled">
-                                <li><a href="http://scn.sap.com/community/developer-center/cloud-platform" rel="external">SAP HANA Cloud Developer Center</a></li>
-                                <li><a href="https://help.netweaver.ondemand.com/help/frameset.htm" rel="external">Developer Guide</a></li>
-                                <li><a href="http://scn.sap.com/community/developer-center/cloud-platform/content" rel="external">Blogs</a></li>
-                                <li><a href="http://sapnwcloudlabs.github.com/nwcloud-roo-gwaddon/tutorial.html" rel="external">SAP NetWeaver Gateway Connectivity Addon for Spring Roo</a></li>
-                            </ul>
-                        </div>
-                    </section>
-                </div><!-- /.row-fluid -->
 
 
-                <div id="footer-sub">
+    <div class="cmp-sap-model__footer_bg">
+        <div class="container">
+            <div id="footer">
+                <footer>
                     <div class="row-fluid">
-                        <div class="footer-contact span12">
-
-
-                            <ul class="inline social pull-right">
-                                <li class="twitter icon"><a href="#">Twitter</a></li>
-                                <li class="facebook icon"><a href="#">Facebook</a></li>
-                                <li class="linkedin icon"><a href="#">LinkedIn</a></li>
-                                <li class="youtube icon"><a href="#">YouTube</a></li>
-                                <li class="googleplus icon"><a href="#">Google+</a></li>
-                                <li><a href="#">Follow Developers</a></li>
-                            </ul>
-
-
-                            <div class="copyright">
-
-                                <ul class="inline primary">
-                                    <li><a href="#">Site Index</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">SAP Help Portal</a></li>
-                                </ul>
-
-                                <ul class="inline">
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">Terms of Use</a></li>
-                                    <li><a href="#">Legal Disclosure</a></li>
-                                    <li><a href="#">Copyright</a></li>
+                        <section class="footer-links" data-sly-list.footerGroup="${model.footerGroupLinksCol}">
+                            <div class="span3">
+                                <h4>${footerGroup.groupTitle}</h4>
+                                <ul class="unstyled" data-sly-list.linksNames="${footerGroup.linksNames}">
+                                    <li><a href="${linksNames.link}" rel="${linksNames.typeOfOpen}">${linksNames.descriptionLink}</a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </section>
                     </div><!-- /.row-fluid -->
-                </div>
-            </footer>
+
+
+                    <div id="footer-sub">
+                        <div class="row-fluid">
+                            <div class="footer-contact span12">
+
+
+                                <ul class="inline social pull-right">
+                                    <li class="twitter icon"><a href="#">Twitter</a></li>
+                                    <li class="facebook icon"><a href="#">Facebook</a></li>
+                                    <li class="linkedin icon"><a href="#">LinkedIn</a></li>
+                                    <li class="youtube icon"><a href="#">YouTube</a></li>
+                                    <li class="googleplus icon"><a href="#">Google+</a></li>
+                                    <li><a href="#">Follow Developers</a></li>
+                                </ul>
+
+
+                                <div class="copyright">
+
+                                    <ul class="inline primary" data-sly-list.copyrightsColPartOne="${model.copyrightsColPartOne}">
+                                        <li><a href="${copyrightsColPartOne.link}" rel="${copyrightsColPartOne.typeOfOpen}">${copyrightsColPartOne.descriptionLink}</a></li>
+                                    </ul>
+
+                                    <ul class="inline" data-sly-list.copyrightsColPartTwo="${model.copyrightsColPartTwo}">
+                                        <li><a href="${copyrightsColPartTwo.link}" rel="${copyrightsColPartTwo.typeOfOpen}">${copyrightsColPartTwo.descriptionLink}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><!-- /.row-fluid -->
+                    </div>
+                </footer>
+            </div>
         </div>
     </div>
-  </div>
 
 </sly>
 

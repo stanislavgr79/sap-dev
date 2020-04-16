@@ -1,11 +1,21 @@
 package com.sap.core.models.beans.navigationfooter;
 
+import javax.annotation.PostConstruct;
+
 public class CopyrightsBean {
 
     private boolean isURL;
     private String typeOfOpen;
     private String link;
     private String descriptionLink;
+
+
+    @PostConstruct
+    public final void init() {
+        if(!isURL){
+            link = link.concat(".html");
+        }
+    }
 
     public boolean isURL() {
         return isURL;
