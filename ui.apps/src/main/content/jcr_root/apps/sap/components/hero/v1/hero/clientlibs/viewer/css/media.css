@@ -1,6 +1,6 @@
 @media (max-width: 480px) {
     .sap-hero {
-        padding-top: 40px;
+
     }
 
     .sap-hero__unit {
@@ -9,7 +9,7 @@
         text-align: center;
         left: 0;
         right: 0;
-        position: absolute;
+        position: relative;
     }
 
         .sap-hero__unit h1 {
@@ -23,7 +23,6 @@
 
     .hero_v1__img {
         position: relative;
-        margin-block-start: 100px;
         float: center;
         align: center;
         place-self: center;
@@ -45,8 +44,7 @@
         font-size: 18px;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-            padding-bottom: 20px;
-    padding-top: 20px;
+        height: 300px;
     }
 
     .sap-hero__unit {

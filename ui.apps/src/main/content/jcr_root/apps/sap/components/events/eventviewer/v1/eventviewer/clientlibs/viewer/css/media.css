@@ -1,0 +1,18 @@
+@media (min-width: 768px)
+.navbar .nav {
+    font-family: "BentonSansBold", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+
+    .navbar .nav > li {
+        line-height: 30px;
+
+        .navbar .nav > li > a {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+}
+
+

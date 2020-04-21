@@ -17,7 +17,7 @@
                 <items jcr:primaryType="nt:unstructured">
 
                     <text_value jcr:primaryType="nt:unstructured"
-                                   jcr:title="Description button"
+                                   jcr:title="Description news"
                                    margin="{Boolean}true"
                                    sling:resourceType="granite/ui/components/coral/foundation/container">
 
@@ -36,7 +36,7 @@
                                                 <startDateOfEvent
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
-                                                        fieldLabel="Event Start Date"
+                                                        fieldLabel="Date of news"
                                                         name="./newsDate"
                                                         displayTimezoneMessage="{Boolean}true"
                                                         displayedFormat="MMMM DD, YYYY"

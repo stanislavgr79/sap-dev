@@ -36,6 +36,7 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/well">
                                                 <items jcr:primaryType="nt:unstructured">
+
                                                     <title
                                                             jcr:primaryType="nt:unstructured"
                                                             fieldDescription="Title of footer"
@@ -147,18 +148,19 @@
                                                                         margin="{Boolean}true">
                                                                     <items jcr:primaryType="nt:unstructured">
                                                                         <column
-
                                                                                 jcr:primaryType="nt:unstructured"
                                                                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                                                             <items jcr:primaryType="nt:unstructured">
                                                                                 <file
                                                                                         jcr:primaryType="nt:unstructured"
                                                                                         sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                                        allowUpload="{Boolean}false"
                                                                                         autoStart="{Boolean}false"
                                                                                         class="cq-droptarget"
+                                                                                        fieldLabel="Image Asset"
                                                                                         fileNameParameter="./fileName"
                                                                                         fileReferenceParameter="./fileReference"
-                                                                                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                                                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff]"
                                                                                         multiple="{Boolean}false"
                                                                                         name="./file"
                                                                                         title="Upload Image Asset"
@@ -170,6 +172,7 @@
                                                                 </columns>
                                                             </items>
                                                         </image>
+
                                                         <checkbox
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -177,7 +180,9 @@
                                                                 name="./isURL"
                                                                 value="{Boolean}true"
                                                                 uncheckedValue="{Boolean}false"
-                                                                text="URL?"/>
+                                                                text="URL?"
+                                                                granite:class="cq-dialog-checkbox_isURL__socials"
+                                                                />
                                                         <checkbox2
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -185,16 +190,26 @@
                                                                 value="external"
                                                                 uncheckedValue="external nofollow"
                                                                 text="New page link?"
-                                                                granite:class="cq-dialog-checkbox_typeofopen__socials"
+                                                                granite:class="cq-dialog-checkbox_typeofopen__social"
                                                         />
-                                                        <linkTo
-                                                                granite:class="cmp-navigation__editor-social__link"
+                                                        <title
+                                                                jcr:primaryType="nt:unstructured"
+                                                                fieldDescription="Title of social image"
+                                                                fieldLabel="Title of social image"
+                                                                required="{Boolean}true"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                name="./title"
+                                                                granite:class="cmp-navigation__editor-social__title"
+                                                                />
+                                                        <link
                                                                 jcr:primaryType="nt:unstructured"
                                                                 fieldLabel="Link to URL"
-                                                                name="./linkTo"
+                                                                name="./link"
                                                                 rootPath="/content/sap"
                                                                 suffix=".html"
-                                                                sling:resourceType="cq/gui/components/coral/common/form/pagefield/"/>
+                                                                sling:resourceType="cq/gui/components/coral/common/form/pagefield/"
+                                                                granite:class="cmp-navigation__editor-social__link"
+                                                                />
                                                     </items>
                                                 </field>
                                             </multiSocials>
@@ -413,6 +428,5 @@
             </tabs>
         </items>
     </content>
-
 
 </jcr:root>

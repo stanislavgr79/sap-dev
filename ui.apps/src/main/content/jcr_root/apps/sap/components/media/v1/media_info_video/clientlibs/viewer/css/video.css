@@ -29,3 +29,6 @@
     overflow: hidden;
 }
 
+.media-info__content i {
+	color: #fdb813;
+}

@@ -15,14 +15,16 @@ import javax.inject.Inject;
 import java.util.*;
 
 @Model(adaptables = SlingHttpServletRequest.class,
-        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
-        // resourceType = "sap/components/navigation"
+        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,
+        resourceType = "sap/components/events/v1/event"
 )
 public class NavigationHeader {
 
     private List<NavigationPage> items = new ArrayList<>();
     @ValueMapValue
     private String pathRootPage;
+    @ValueMapValue
+    private String siteTitle;
     private Page rootPage;
     private Locale locale;
 
@@ -59,6 +61,7 @@ public class NavigationHeader {
         public String getPath() {
             return path;
         }
+
     }
 
     @PostConstruct
@@ -124,5 +127,9 @@ public class NavigationHeader {
 
     public String getLocale() {
         return locale.getLanguage();
+    }
+
+    public String getSiteTitle() {
+        return siteTitle;
     }
 }

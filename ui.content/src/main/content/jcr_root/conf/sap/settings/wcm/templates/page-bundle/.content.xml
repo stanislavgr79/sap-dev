@@ -7,6 +7,6 @@
         cq:templateType="/conf/sap/settings/wcm/template-types/page"
         jcr:description="My Site Page Template (bundle)"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Content Page"
+        jcr:title="Content Bundle-Page"
         status="enabled"/>
 </jcr:root>

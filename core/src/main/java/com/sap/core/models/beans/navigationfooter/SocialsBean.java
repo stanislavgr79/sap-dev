@@ -4,7 +4,8 @@ public class SocialsBean {
 
     private boolean isURL;
     private String fileReference;
-    private String linkTo;
+    private String title;
+    private String link;
     private String typeOfOpen;
 
     public boolean isURL() {
@@ -23,12 +24,20 @@ public class SocialsBean {
         this.fileReference = fileReference;
     }
 
-    public String getLinkTo() {
-        return linkTo;
+    public String getTitle() {
+        return title;
     }
 
-    public void setLinkTo(String linkTo) {
-        this.linkTo = linkTo;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
     public String getTypeOfOpen() {

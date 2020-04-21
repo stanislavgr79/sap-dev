@@ -1,0 +1,49 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<sly
+        data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+        data-sly-use.templates="templates.html"
+        data-sly-use.model="com.sap.core.models.events.component.EventComponent"
+        data-sly-test.hasContent="${model.title || model.description || model.eventStartDate}"
+        class="cmp-sap-model__event_v1"
+>
+
+    <div class="cmp-separator">
+        <hr class="cmp-separator__horizontal-event"/>
+    </div>
+
+    <div class="event_v1__table">
+        <table>
+            <tr>
+                <th scope="col" class="event_v1__title_name">Title</th>
+                <th scope="col" class="event_v1__title_value" colspan="3">
+                    <a href="${model.titleLink}" rel="${model.typeOfOpen}">${model.title @context='html'}</a>
+                </th>
+            </tr>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Type</th>
+                <th scope="col">Topic</th>
+                <th scope="col">Description</th>
+            </tr>
+            <tr>
+                <td class="event_v1__date">${'MMMM dd' @ format=model.eventStartDate}</td>
+                <td class="event_v1__type">${model.type}</td>
+                <td class="event_v1__topic">${model.topic}</td>
+                <td class="event_v1__description">${model.description @context='html'}</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="cmp-separator">
+        <hr class="cmp-separator__horizontal-event"/>
+    </div>
+
+</sly>
+
+</sly>
+
+<sly data-sly-call="${clientLib.css @ categories=['sap.components.events.event.v1.viewer']}"></sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-sap-model__event_v1'}"></sly>

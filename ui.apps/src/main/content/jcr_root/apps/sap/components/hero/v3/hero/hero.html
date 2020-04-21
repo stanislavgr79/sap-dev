@@ -8,6 +8,7 @@
      data-sly-use.descriptionTemplate="description.html"
 
      data-sly-test.hasContent="${model.title || model.description}"
+     class="cmp-sap-model__hero_v3"
 >
 
     <div class="hero-list" >
@@ -25,5 +26,5 @@
 
 </sly>
 
-<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-model'}"></sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-sap-model__hero_v3'}"></sly>
 <sly data-sly-call="${clientLib.css @ categories=['sap.components.hero.v3.viewer']}"></sly>

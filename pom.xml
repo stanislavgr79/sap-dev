@@ -103,6 +103,13 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.10</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>
@@ -540,6 +547,19 @@ Bundle-DocURL:
     <!-- ====================================================================== -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>bndlib</artifactId>
+                <version>2.4.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.10</version>
+           <!--     <optional>true</optional> -->
+           <!--		<scope>compile</scope>-->
+            </dependency>
             <!-- OSGi Dependencies -->
             <dependency>
                 <groupId>org.osgi</groupId>

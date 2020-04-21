@@ -303,6 +303,14 @@
                         </assetToComponentMapping>
                     </cq:authoring>
                 </policy_1575040440977>
+                <policy_1587311715953
+                        jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Sap admin page event"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/apps/sap/components/events/v1/event]">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_1587311715953>
             </container>
             <teaser jcr:primaryType="nt:unstructured">
                 <policy_1575031387650

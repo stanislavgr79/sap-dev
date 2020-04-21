@@ -27,13 +27,7 @@ public class NavigationFooterServiceImpl implements NavigationFooterService{
         if (socials != null && !socials.isEmpty()) {
             for (Resource item : socials) {
                 if (item != null) {
-                    SocialsBean menuItem = new SocialsBean();
-                    ValueMap vm = item.getValueMap();
-                    menuItem.setFileReference(getPropertyValue(vm, "fileReference"));
-                    menuItem.setLinkTo(getPropertyValue(vm, "linkTo"));
-                    menuItem.setTypeOfOpen(getPropertyValue(vm, TYPE_OF_OPEN_PROPERTY_KEY));
-                    socialsCol.add(menuItem);
-
+                    socialsCol.add(buildSocialsBean(item));
                 } else {
                     logger.info(LOGGER_MESSAGE , item);
                 }
@@ -66,15 +60,33 @@ public class NavigationFooterServiceImpl implements NavigationFooterService{
         return resources != null && !resources.isEmpty();
     }
 
-    private CopyrightsBean buildCopyrightBean(Resource item){
-        CopyrightsBean copyrightsBean = new CopyrightsBean();
+    private SocialsBean buildSocialsBean(Resource item){
+        SocialsBean socialsBean = new SocialsBean();
         ValueMap vm = item.getValueMap();
         boolean isURL = getPropertyValue(vm, "isURL").equals("true");
-        copyrightsBean.setURL(isURL);
-        copyrightsBean.setTypeOfOpen(getPropertyValue(vm, TYPE_OF_OPEN_PROPERTY_KEY));
-        copyrightsBean.setLink(correctLinkByURLValue(isURL, vm));
-        copyrightsBean.setDescriptionLink(getPropertyValue(vm, "descriptionLink"));
-        return copyrightsBean;
+        socialsBean.setURL(isURL);
+        socialsBean.setTitle(getPropertyValue(vm, "title"));
+        socialsBean.setFileReference(getPropertyValue(vm, "fileReference"));
+        socialsBean.setLink(correctLinkByURLValue(isURL, vm));
+        socialsBean.setTypeOfOpen(getPropertyValue(vm, TYPE_OF_OPEN_PROPERTY_KEY));
+        return socialsBean;
+    }
+
+    private CopyrightsBean buildCopyrightBean(Resource item){
+//        CopyrightsBean copyrightsBean = new CopyrightsBean();
+        ValueMap vm = item.getValueMap();
+        boolean isURL = getPropertyValue(vm, "isURL").equals("true");
+        return CopyrightsBean.builder()
+                .isURL(isURL)
+                .typeOfOpen(getPropertyValue(vm, TYPE_OF_OPEN_PROPERTY_KEY))
+                .link(correctLinkByURLValue(isURL, vm))
+                .descriptionLink(getPropertyValue(vm, "descriptionLink"))
+                .build();
+//        copyrightsBean.setURL(isURL);
+//        copyrightsBean.setTypeOfOpen(getPropertyValue(vm, TYPE_OF_OPEN_PROPERTY_KEY));
+//        copyrightsBean.setLink(correctLinkByURLValue(isURL, vm));
+//        copyrightsBean.setDescriptionLink(getPropertyValue(vm, "descriptionLink"));
+//        return copyrightsBean;
     }
 
     private void fillCopyrightCollectionsByResourceSize(CopyrightsBean copyrightsBean, int index, int resourceSize){

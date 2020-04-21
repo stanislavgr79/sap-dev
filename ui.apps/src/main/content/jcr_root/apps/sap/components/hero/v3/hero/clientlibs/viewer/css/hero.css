@@ -31,3 +31,7 @@
 	text-indent: -1.50em;
 
 }
+
+.hero-list__content i {
+	color: #fdb813;
+}

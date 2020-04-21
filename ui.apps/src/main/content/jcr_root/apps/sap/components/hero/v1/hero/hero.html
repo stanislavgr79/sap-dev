@@ -8,6 +8,7 @@
      data-sly-use.actionTemplate="action.html"
 
      data-sly-test.hasContent="${model.title || model.text || model.linkTo || model.typeOfOpen || model.linkLabel}"
+     class="cmp-sap-model__hero_v1"
 >
     <div class="sap-hero__wrapper">
         <div class="container sap-hero">
@@ -23,5 +24,5 @@
 
 </sly>
 
-<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-model'}"></sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-sap-model__hero_v1'}"></sly>
 <sly data-sly-call="${clientLib.css @ categories=['sap.components.hero.v1.viewer']}"></sly>

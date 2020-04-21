@@ -129,11 +129,15 @@
     <!-- ====================================================================== -->
     <dependencies>
         <dependency>
+            <groupId>biz.aQute.bnd</groupId>
+            <artifactId>bndlib</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.sap</groupId>
             <artifactId>com.sap.core</artifactId>
             <version>${project.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.sap</groupId>
             <artifactId>com.sap.ui.frontend</artifactId>

@@ -5,5 +5,4 @@
           jcr:description="Navigation bar v3 (footer)"
           jcr:title="Navigation v3 (footer)"
           componentGroup="SAP Developers - Structure"
-          imageDelegate="core/wcm/components/image/v2/image"
           />

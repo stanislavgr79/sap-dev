@@ -15,6 +15,7 @@ public class MediaInfoVideoServiceImpl implements MediaInfoVideoService{
     @Override
     public List<String> getMediaInfo(Resource resource) {
         Resource childResource = resource.getChild("elements");
+        mediaInfo = new ArrayList<>();
         if (childResource != null) {
             mediaInfo = populateModel(childResource);
         }
