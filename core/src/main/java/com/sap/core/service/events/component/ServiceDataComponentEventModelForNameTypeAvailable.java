@@ -19,7 +19,7 @@ public class ServiceDataComponentEventModelForNameTypeAvailable {
     @ObjectClassDefinition
     public @interface ServiceDataComponentEventModelForNameTypeAvailableConfig {
         @AttributeDefinition(name = "Name of type", type = AttributeType.STRING)
-        String[] nameOfTypeArray() default {"MyType"};
+        String[] nameOfTypeArray() default {"SAP InnoJam", "SAP CodeJam", "Online Events", "Other Events"};
     }
 
     @Activate

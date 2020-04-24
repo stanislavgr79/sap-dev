@@ -1,5 +1,14 @@
 package com.sap.core.models.beans.navigationfooter;
 
+import lombok.*;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder(access = AccessLevel.PUBLIC)
+@EqualsAndHashCode
+@ToString
 public class SocialsBean {
 
     private boolean isURL;
@@ -7,44 +16,4 @@ public class SocialsBean {
     private String title;
     private String link;
     private String typeOfOpen;
-
-    public boolean isURL() {
-        return isURL;
-    }
-
-    public void setURL(boolean URL) {
-        isURL = URL;
-    }
-
-    public String getFileReference() {
-        return fileReference;
-    }
-
-    public void setFileReference(String fileReference) {
-        this.fileReference = fileReference;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public String getTypeOfOpen() {
-        return typeOfOpen;
-    }
-
-    public void setTypeOfOpen(String typeOfOpen) {
-        this.typeOfOpen = typeOfOpen;
-    }
 }

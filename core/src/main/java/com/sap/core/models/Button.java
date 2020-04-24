@@ -1,5 +1,6 @@
 package com.sap.core.models;
 
+import lombok.Getter;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -7,6 +8,7 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import javax.annotation.PostConstruct;
 
+@Getter
 @Model(adaptables = SlingHttpServletRequest.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,
         resourceType = "sap/components/button/v2/button"
@@ -34,23 +36,4 @@ public class Button {
             }
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public String getLinkLabel() {
-        return linkLabel;
-    }
-
-    public String getLinkTo() {
-        return linkTo;
-    }
-
-    public boolean getStyleSide() {
-        return styleSide;
-    }
-
-    public String getStyleSideDescription() {
-        return styleSideDescription;
-    }
 }

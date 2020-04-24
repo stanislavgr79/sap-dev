@@ -29,7 +29,7 @@ import java.util.Map;
 public class EventsViewServlet extends SlingSafeMethodsServlet {
 
     @Reference
-    private EventsViewService eventsViewService;
+    private transient EventsViewService eventsViewService;
 
     @Override
     protected void doGet(final SlingHttpServletRequest request, final SlingHttpServletResponse response) throws IOException {

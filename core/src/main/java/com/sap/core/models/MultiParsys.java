@@ -1,5 +1,6 @@
 package com.sap.core.models;
 
+import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -9,6 +10,7 @@ import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 @Model(adaptables = Resource.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
@@ -44,35 +46,4 @@ public class MultiParsys {
         style = "grid-template-columns: repeat(" + column + ", 1fr)";
     }
 
-    public int getColumn() {
-        return column;
-    }
-
-    public List<String> getTable() {
-        return table;
-    }
-
-    public String getStyle() {
-        return style;
-    }
-
-    public String getTitleParsys() {
-        return titleParsys;
-    }
-
-    public String getDescriptionButton() {
-        return descriptionButton;
-    }
-
-    public String getLinkLabel() {
-        return linkLabel;
-    }
-
-    public String getLinkTo() {
-        return linkTo;
-    }
-
-    public boolean isTypeOfLink() {
-        return typeOfLink;
-    }
 }

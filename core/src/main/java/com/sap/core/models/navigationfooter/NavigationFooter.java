@@ -4,6 +4,7 @@ import com.sap.core.models.beans.navigationfooter.CopyrightsBean;
 import com.sap.core.models.beans.navigationfooter.LinksGroupBean;
 import com.sap.core.models.beans.navigationfooter.SocialsBean;
 import com.sap.core.service.navigationfooter.NavigationFooterService;
+import lombok.Getter;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;

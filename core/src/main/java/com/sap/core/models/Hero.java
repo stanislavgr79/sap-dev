@@ -1,10 +1,12 @@
 package com.sap.core.models;
 
+import lombok.Getter;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
+@Getter
 @Model(adaptables = SlingHttpServletRequest.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
@@ -23,27 +25,4 @@ public class Hero {
     @ValueMapValue
     private boolean typeOfLink;
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public String getLinkLabel() {
-        return linkLabel;
-    }
-
-    public String getLinkTo() {
-        return linkTo;
-    }
-
-    public String getTypeOfOpen() {
-        return typeOfOpen;
-    }
-
-    public boolean isTypeOfLink() {
-        return typeOfLink;
-    }
 }

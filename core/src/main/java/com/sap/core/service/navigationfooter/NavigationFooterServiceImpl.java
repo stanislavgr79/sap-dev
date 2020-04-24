@@ -73,7 +73,7 @@ public class NavigationFooterServiceImpl implements NavigationFooterService{
     }
 
     private CopyrightsBean buildCopyrightBean(Resource item){
-//        CopyrightsBean copyrightsBean = new CopyrightsBean();
+
         ValueMap vm = item.getValueMap();
         boolean isURL = getPropertyValue(vm, "isURL").equals("true");
         return CopyrightsBean.builder()
@@ -82,11 +82,6 @@ public class NavigationFooterServiceImpl implements NavigationFooterService{
                 .link(correctLinkByURLValue(isURL, vm))
                 .descriptionLink(getPropertyValue(vm, "descriptionLink"))
                 .build();
-//        copyrightsBean.setURL(isURL);
-//        copyrightsBean.setTypeOfOpen(getPropertyValue(vm, TYPE_OF_OPEN_PROPERTY_KEY));
-//        copyrightsBean.setLink(correctLinkByURLValue(isURL, vm));
-//        copyrightsBean.setDescriptionLink(getPropertyValue(vm, "descriptionLink"));
-//        return copyrightsBean;
     }
 
     private void fillCopyrightCollectionsByResourceSize(CopyrightsBean copyrightsBean, int index, int resourceSize){

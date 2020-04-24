@@ -19,7 +19,7 @@ public class ServiceDataComponentEventModelForNameTopicAvailable {
     @ObjectClassDefinition
     public @interface ServiceDataComponentEventModelForNameTopicAvailableConfig {
         @AttributeDefinition(name = "Name of topic", type = AttributeType.STRING)
-        String[] nameOfTopicArray() default {"MyTopic"};
+        String[] nameOfTopicArray() default {"Database", "Cloud", "Mobile", "Other Topics"};
     }
 
     @Activate

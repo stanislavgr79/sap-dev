@@ -37,11 +37,12 @@ public class EventViewer {
         this.keyForBuildMapOfEventsComponent = keyForBuildMapOfEventsComponent;
     }
 
+    public String getKeyForBuildMapOfEventsComponent() {
+        return keyForBuildMapOfEventsComponent;
+    }
     public Map<String, List<EventComponent>> getAllEvents() {
         return allEvents;
     }
 
-    public String getKeyForBuildMapOfEventsComponent() {
-        return keyForBuildMapOfEventsComponent;
-    }
+
 }

@@ -1,5 +1,7 @@
+(function( $ ) {
+  "use strict";
 
-$(document).ready(function () {
+$(document).ready(function(){
     var sort = $('#event_sort').data('sort');
     changeSortEvents(sort);
     $('#event_sort').change();
@@ -88,7 +90,7 @@ function changeSortEvents(sort) {
                             output += "<ul class='unstyled'>";
                             output += "<li class='events_topic'>";
                             output += "<span class='date' type='date'>" + formatDate(el.eventStartDate) + "</span>";
-                            output += "<h4><a href='#'>" + el.title + "</a></h4>";
+                            output += "<h4><a href='"+el.titleLink+"' rel='"+el.typeOfOpen+"'>" + el.title + "</a></h4>";
                             output += el.description;
                             output += "</li></ul>";
                         });
@@ -119,7 +121,7 @@ function changeSortEvents(sort) {
                             output += "<ul class='icons icons_type'><i class='icon-" + el.topic + "'></i>";
                             output += "<li class='events_type'>";
                             output += "<span class='date' type='date'>" + formatDate(el.eventStartDate) + "</span>";
-                            output += "<h4><a href='"+el.titleLink+""'>" + el.title + "</a></h4>";
+                            output += "<h4><a href='"+el.titleLink+"' rel='"+el.typeOfOpen+"'>" + el.title + "</a></h4>";
                             output += el.description;
                             output += "</li></ul>";
                         });
@@ -139,3 +141,5 @@ function formatDate(date) {
         month: 'long'
     });
 }
+
+}(jQuery));
