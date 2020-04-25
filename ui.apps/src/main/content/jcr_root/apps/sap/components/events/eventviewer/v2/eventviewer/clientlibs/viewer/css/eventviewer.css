@@ -1,0 +1,159 @@
+.container .navbar {
+    margin-top: 40px;
+}
+
+    .container .navbar .navbar-inner {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        background: #ffffff;
+    }
+
+    .container .navbar .brand {
+        color: #4d4d4d;
+        font-size: 16px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        line-height: 30px;
+        top: 0;
+    }
+
+.brand {
+    top: 3px;
+}
+
+.container .navbar .nav > li {
+    line-height: 30px;
+}
+
+    .container .navbar .nav > li > span {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+.container .navbar .nav > .active > span, .container .navbar .nav > .active > span:hover, .container .navbar .nav > .active > span:focus {
+    background: #fdb813;
+    color: #333333;
+    text-shadow: none;
+}
+
+.event-listing {
+    padding: 20px 0 40px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.event-listing h3 i {
+    color: #fdb813;
+    padding-left: 5px;
+}
+
+.event-listing ul li {
+    margin: 0;
+    padding: 5px 0 10px;
+}
+
+.event-listing ul.unstyled .date {
+    margin-left: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.event-listing ul h4 {
+    margin: 0 0 5px 0;
+}
+
+.event-listing ul p, .event-listing ul h4, .event-listing ul .date {
+    text-indent: 0;
+}
+
+.events_topic > h4 > a > p {
+    margin: 0;
+}
+
+.events_topic > p, .events_type > p {
+    font-size: 12px;
+    line-height: 13.6px;
+    margin: 0 0 5px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+.event-listing ul h4 a {
+    color: #333333;
+    display: block;
+}
+
+.events_type {
+    display: inline-grid;
+}
+
+    .events_type .date {
+        margin-left: 0;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+.icons > i {
+    color: #fdb813;
+}
+
+.events_type i {
+    color: black;
+}
+
+.events_type p {
+    margin: 0;
+}
+
+.icons_type > i {
+    padding-right: 5px;
+}
+
+
+.events_type i, .events_topic i, .invent-list i {
+    color: black;
+    font-family: "BentonSansLight", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+#events__view-topic > span {
+	cursor: pointer;
+        display: block;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#events__view-type > span {
+	cursor: pointer;
+        display: block;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.event-description p {
+    font-size: 12px;
+    line-height: 13.6px;
+    margin: 0 0 5px;
+
+}
+
+.event-list .icon {
+
+    width: 0.75em;
+    font-size: 16px;
+    color: #fdb813;
+    font-family: FontAwesome;
+    margin-left: -20px;
+    padding-right: 8px;
+
+}

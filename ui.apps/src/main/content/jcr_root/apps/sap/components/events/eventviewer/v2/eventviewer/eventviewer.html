@@ -1,0 +1,19 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+
+<sly
+        data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+        data-sly-use.templates="templates.html"
+        data-sly-use.model="com.sap.core.models.events.viewer.EventViewer"
+        data-sly-test.hasContent="${model.allEvents}"
+        class="cmp-sap-model__eventviewer_v1"
+>
+    <div id="eventviewer-v2">
+        <events_nav data-path=${resource.path}></events_nav>
+        <all-events id="all-events" :events-value="events"></all-events>
+    </div>
+
+</sly>
+
+<sly data-sly-call="${clientLib.all @ categories=['sap.components.events.eventviewer.v2.viewer']}"></sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent, classAppend='cmp-sap-model__eventviewer_v1'}"></sly>

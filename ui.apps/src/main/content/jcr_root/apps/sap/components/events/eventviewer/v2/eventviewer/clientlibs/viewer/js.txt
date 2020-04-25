@@ -2,6 +2,7 @@
 # Copyright
 ###############################################################################
 
-#base=css
-eventviewer.css
-media.css
+#base=js
+vue.js
+vue-resource.js
+eventviewer.js

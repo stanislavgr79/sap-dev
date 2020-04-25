@@ -4,4 +4,3 @@
 
 #base=js
 eventviewer.js
-vue.js
